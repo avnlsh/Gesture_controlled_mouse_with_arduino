@@ -1,0 +1,102 @@
+Gesture-Controlled Mouse using Arduino, MPU6050, IR Sensors, and Processing
+
+Overview
+You'll use:
+
+- MPU6050 → Detect head/hand tilts or gestures for cursor movement.
+
+- IR Sensors (Obstacle Avoidance) → Left & Right Click gestures.
+
+- Arduino Uno → Reads sensors and sends data via serial.
+
+- Processing IDE → Interprets data and controls the mouse on your PC.
+
+Components Required
+- Arduino Uno
+
+- MPU6050 module
+
+- 2x IR Obstacle Avoidance Sensors (left-click, right-click)
+
+- Jumper wires
+
+- Breadboard (optional)
+
+- USB cable (for Arduino)
+
+- PC with Arduino IDE & Processing IDE
+
+Working
+| Component     | Role                                |
+
+|---------------|--------------------------------------|
+
+| MPU6050       | Controls cursor movement based on tilt |
+
+| Left IR Sensor| Performs left click                   |
+
+| Right IR Sensor| Performs right click                 |
+
+| Arduino       | Collects data, sends via Serial       |
+
+| Processing IDE| Reads serial, moves mouse/clicks      |
+
+Step 1: Arduino Code
+Libraries:
+
+- Install MPU6050 library
+
+- Wire.h (default)
+
+ 
+
+Wiring:
+
+ 
+
+| MPU6050 Pin | Arduino Pin |
+
+|-------------|-------------|
+
+| VCC         | 5V          |
+
+| GND         | GND         |
+
+| SDA         | A4          |
+
+| SCL         | A5          |
+
+ 
+
+| IR Sensor Pin | Arduino Pin |
+
+|---------------|-------------|
+
+| VCC           | 5V          |
+
+| GND           | GND         |
+
+| OUT (L)       | 8           |
+
+| OUT (R)       | 9           |
+
+ 
+
+Final Setup
+1. Connect all components as described.
+
+2. Upload Arduino code via Arduino IDE.
+
+3. Open Processing, paste code, run.
+
+4. Move MPU6050 slightly → Mouse should move.
+
+5. Place hand near IR sensors → Clicks should happen.
+
+Test and Tune
+- Sensitivity: Adjust Arduino divisor (ax/1000, etc.)
+
+- Delay: Lower delay() in Arduino for more responsive control.
+
+- Click debounce: Add delay after clicks if double-click happens.
+
